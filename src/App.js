@@ -36,6 +36,7 @@ const App = () => {
 
   return (
     <div>
+      <h1>Sellers Admin App</h1>
       <ProductForm onAddProduct={handleAddProduct} />
       <ProductList products={products} onDeleteProduct={handleDeleteProduct} />
       <h3>Total Value Worth of Products: Rs.{calculateTotalValue()}</h3>
