@@ -9,6 +9,7 @@ const App = () => {
     // Load products from local storage on mount
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
     setProducts(storedProducts);
+    console.log(products);
   }, []);
 
   useEffect(() => {
