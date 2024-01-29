@@ -8,8 +8,8 @@ const App = () => {
   useEffect(() => {
     // Load products from local storage on mount
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
-    setProducts(storedProducts);
-    console.log(products);
+    setProducts((prevProducts) => [...prevProducts, ...storedProducts]);
+    // console.log(products);
   }, []);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const App = () => {
   }, [products]);
 
   const handleAddProduct = (product) => {
-    setProducts([...products, product]);
+    setProducts((prevProducts) => [...prevProducts, product]);
   };
 
   const handleDeleteProduct = (productId) => {
